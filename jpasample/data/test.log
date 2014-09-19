@@ -1,0 +1,4 @@
+/*C3*/SET SCHEMA PUBLIC
+drop table EVENEMENT if exists
+create table EVENEMENT (id integer not null, dateEvtEtHeure timestamp, lieuEvt varchar(255), primary key (id))
+DISCONNECT
