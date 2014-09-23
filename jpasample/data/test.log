@@ -2,3 +2,13 @@
 drop table EVENEMENT if exists
 create table EVENEMENT (id integer not null, dateEvtEtHeure timestamp, lieuEvt varchar(255), primary key (id))
 DISCONNECT
+/*C2*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+drop table EVENEMENT if exists
+drop table PERSONNE if exists
+drop table VEHICULE if exists
+create table EVENEMENT (id integer not null, dateEvtEtHeure timestamp, lieuEvt varchar(255), primary key (id))
+create table PERSONNE (id integer not null, dateNaissance timestamp, nom varchar(255), prenom varchar(255), primary key (id))
+create table VEHICULE (id integer not null, marque varchar(255), modele varchar(255), nbPlace integer not null, primary key (id))
+DISCONNECT

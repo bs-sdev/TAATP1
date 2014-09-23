@@ -104,8 +104,4 @@ public class Vehicule {
 	public void setId(int id) {
 		Id = id;
 	}
-	
-	
-	
-	
 }

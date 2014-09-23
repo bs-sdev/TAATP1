@@ -8,6 +8,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * @author benjamin
@@ -103,6 +104,7 @@ public class Personne {
 	/**
 	 * @return the vehicule
 	 */
+	@Transient
 	public Vehicule getVehicule() {
 		return vehicule;
 	}
@@ -128,10 +130,5 @@ public class Personne {
 	public void setId(int id) {
 		Id = id;
 	}
-	
-	
-	
-	
-	
 	
 }
