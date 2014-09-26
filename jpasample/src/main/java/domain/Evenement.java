@@ -3,10 +3,12 @@
  */
 package domain;
 
-import java.util.Date;
+import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -15,13 +17,14 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "EVENEMENT")
-
 public class Evenement {
 	
 	/**
 	 * Id 
 	 */
 	private int id;
+	
+	private List<Covoiturage> covoiturages;
 	
 	
 	/**
@@ -36,6 +39,11 @@ public class Evenement {
 	 */
 	private String lieuEvt;
 	
+	/**
+	 * 
+	 */
+	public Evenement() {}
+
 	/**
 	 * Constructeur d'évènement qui prendra en paramètre une date (heure et date)
 	 * ainsi que le lieu ou se déroulera l'évènement 
@@ -96,6 +104,19 @@ public class Evenement {
 		this.id = id;
 	}
 
-	
+	/**
+	 * @return the covoiturages
+	 */
+	@OneToMany
+	public List<Covoiturage> getCovoiturages() {
+		return covoiturages;
+	}
+
+	/**
+	 * @param covoiturages the covoiturages to set
+	 */
+	public void setCovoiturages(List<Covoiturage> covoiturages) {
+		//this.covoiturages = covoiturages;
+	}
 	
 }

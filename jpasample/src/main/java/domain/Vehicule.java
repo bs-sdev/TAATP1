@@ -4,6 +4,7 @@
 package domain;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Id;
 
@@ -18,7 +19,7 @@ public class Vehicule {
 	/**
 	 * 
 	 */
-	private int Id;
+	private int id;
 	
 	/**
 	 * 
@@ -33,7 +34,14 @@ public class Vehicule {
 	/**
 	 * 
 	 */
-	private int nbPlace;
+	private short nbPlace;
+	
+	private Conducteur proprietaire;
+	
+	/**
+	 * 
+	 */
+	public Vehicule() {}
 
 	/**
 	 * 
@@ -41,11 +49,12 @@ public class Vehicule {
 	 * @param marque
 	 * @param nbPlace
 	 */
-	public Vehicule(String modele, String marque, int nbPlace) {
+	public Vehicule(String modele, String marque, short nbPlace, Conducteur proprietaire) {
 		super();
 		this.modele = modele;
 		this.marque = marque;
 		this.nbPlace = nbPlace;
+		this.proprietaire = proprietaire;
 	}
 
 	/**
@@ -79,14 +88,14 @@ public class Vehicule {
 	/**
 	 * @return the nbPlace
 	 */
-	public int getNbPlace() {
+	public short getNbPlace() {
 		return nbPlace;
 	}
 
 	/**
 	 * @param nbPlace the nbPlace to set
 	 */
-	public void setNbPlace(int nbPlace) {
+	public void setNbPlace(short nbPlace) {
 		this.nbPlace = nbPlace;
 	}
 
@@ -95,13 +104,29 @@ public class Vehicule {
 	 */
 	@Id
 	public int getId() {
-		return Id;
+		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
+
+	/**
+	 * @return the proprietaire
+	 */
+	@OneToOne
+	public Conducteur getProprietaire() {
+		return proprietaire;
+	}
+
+	/**
+	 * @param proprietaire the proprietaire to set
+	 */
+	public void setProprietaire(Conducteur proprietaire) {
+		this.proprietaire = proprietaire;
+	}
+	
 }
