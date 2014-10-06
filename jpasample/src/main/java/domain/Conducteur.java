@@ -38,6 +38,8 @@ public class Conducteur extends Covoitureur {
 	
 	/**
 	 * @return the vehicule
+	 * 
+	 * Voir avec Max pour ce qui est des véhicules, est-ce qu'un conducteur à plusieurs véhicule ou pas ...
 	 */
 	@OneToMany
 	public Vehicule getVehicule() {
